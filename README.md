@@ -1,6 +1,6 @@
 # 2uzduotis
 
-*v0.1
+* v0.1
 
 Programa skaičiuoja vartotojo įvestus studentų namų darbų ir egzamino vidurkį ir medianą.
 
