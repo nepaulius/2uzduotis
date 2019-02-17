@@ -5,4 +5,12 @@
 Programa skaičiuoja vartotojo įvestus studentų namų darbų ir egzamino vidurkį ir medianą.
 
 Programos trūkumai:
-1)Nėra validacijų (vartotojas turi įvesti tai ką jo prašo programa)
+Nėra validacijų (vartotojas turi įvesti tai ką jo prašo programa)
+
+
+
+v0.2
+Programa skaičiuoja tekstiniame faile surašytų studentų namų darbų ir egzamino vidurkį ir medianą.
+
+Programos trūkumai:
+Tekstinis failas turi būti surašytas be klaidų, kitaip programa užlūžta.
