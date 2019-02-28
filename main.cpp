@@ -5,6 +5,13 @@
 
 int main()
 {
+
+     for(int k=1;k<6;k++)
+    {
+
+        Pirmasfailas(k);
+    }
+
     std::string q;
     std::cout<<"Iveskite V, jei norite skaityti is failo, M jei norite rasyti ranka : "<<std::endl;
     std::cin>>q;
@@ -27,7 +34,7 @@ int main()
         std::cout<<"Iveskite studentu skaiciu : "<<std::endl;
         std::getline(std::cin,studsk);
 
-        int a=Tik(studsk);
+      int a=Tik(studsk);
 
         while (a<=0 || a>10)
         {
@@ -56,15 +63,15 @@ int main()
 
 
 
-            std::string l;
+            std::string f;
             std::cout<<"Ar norite automatiskai parinkti namu darbu ir egzamino rezultatus? (Jei norite, spauskite M jei ne V)"<<std::endl;
-            std::cin>>l;
-            std::string p=ValidacijaVidurkiuIrMedianai(l);
+            std::cin>>f;
+            std::string p=ValidacijaVidurkiuIrMedianai(f);
 
             double laikinvid=0;
 
 
-            if(l[0]=='M')
+            if(p[0]=='M')
             {
                 int n=3;
                 stud.vardas;
@@ -90,7 +97,7 @@ int main()
 
             }
 
-            else if(l[0]=='V')
+            else if(p[0]=='V')
             {
 
                 std::string  d;
