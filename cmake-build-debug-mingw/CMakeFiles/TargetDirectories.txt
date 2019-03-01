@@ -1,0 +1,3 @@
+C:/Users/Adminas/CLionProjects/objektinis/cmake-build-debug-mingw/CMakeFiles/rebuild_cache.dir
+C:/Users/Adminas/CLionProjects/objektinis/cmake-build-debug-mingw/CMakeFiles/objektinis.dir
+C:/Users/Adminas/CLionProjects/objektinis/cmake-build-debug-mingw/CMakeFiles/edit_cache.dir
