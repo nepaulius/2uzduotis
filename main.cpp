@@ -10,7 +10,9 @@ int main()
     {
 
         Pirmasfailas(k);
+
     }
+
 
     std::string q;
     std::cout<<"Iveskite V, jei norite skaityti is failo, M jei norite rasyti ranka : "<<std::endl;
