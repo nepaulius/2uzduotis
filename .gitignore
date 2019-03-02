@@ -4,6 +4,14 @@ Thumbs.db
 ehthumbs.db
 ehthumbs_vista.db
 
+
+
+.idea/
+build/
+
+
+
+
 # Dump file
 *.stackdump
 
