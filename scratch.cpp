@@ -109,11 +109,10 @@ void Pirmasfailas(int k)
 \
         laikinvid=0;
     }
-    auto startrusis = std::chrono::system_clock::now();
+
     Rusis(stud, k);
-    auto endrusis = std::chrono::system_clock::now();
-    auto uztruko = endrusis - startrusis;
-    std::cout << k<<" karta rusiuojant uztruko :   "<<uztruko.count()<< std::endl;
+
+
 
     for(int i=0;i<stud.size();i++)
     {
@@ -130,7 +129,7 @@ void Pirmasfailas(int k)
     fr.close();
     auto end = std::chrono::system_clock::now();
     auto elapsed = end - start;
-    //std::cout << k<<" karta skaiciuojant uztruko :   "<<elapsed.count() << std::endl;
+    std::cout << k<<" karta skaiciuojant uztruko :   "<<elapsed.count() << std::endl;
 
 }
 std::string Tik2()
