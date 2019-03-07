@@ -18,6 +18,7 @@
 #include <cmath>
 #include <chrono>
 #include <list>
+#include <deque>
 
 
 
@@ -25,7 +26,7 @@ struct Studentai{
 std::string vardas;
 std::string pavarde;
 std::vector <int> balai;
-    int testas;
+int testas;
 double galutinis;
 double galutinismediana;
 bool operator() (Studentai i,Studentai j) { return (i.pavarde<j.pavarde);}
@@ -41,8 +42,9 @@ void Rusis(std::vector<Studentai> vektstud,int k);
  int Ilgiausia(std::vector<std::string>pavardes);
  int countWordsInString(std::string const& str);
  std::string ValidacijaVidurkiuIrMedianai(std::string b);
-void Pirmasfailas2(int k);
 void Rusis2(std::list<Studentai> liststud,int k);
+void Rusis3(std::deque<Studentai>dekasstud,int k);
+void Ivedimas();
 
 
 
