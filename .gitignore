@@ -4,5 +4,7 @@ bin/
 build/
 cmake-build-debug/
 cmake-build-debug-mingw/
+main.exe
+main.o
 *.cbp
 *.layout
