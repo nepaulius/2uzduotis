@@ -4,8 +4,6 @@ bin/
 
 .idea/
 
-build/
-
 cmake-build-debug/
 
 cmake-build-debug-mingw/

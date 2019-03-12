@@ -7,5 +7,5 @@ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY "../build")
 
 
 
-add_executable(objektinis main.cpp)
+add_executable(objektinis main.cpp )
 

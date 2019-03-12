@@ -19,6 +19,7 @@
 #include <chrono>
 #include <list>
 #include <deque>
+#include <random>
 
 
 
@@ -36,7 +37,7 @@ int Tik(std::string tikrinimas);
 std::string Tik2();
  void Tekstas();
 void Pirmasfailas(int k);
-void Rusis(std::vector<Studentai> vektstud,int k);
+std::vector<Studentai> Rusis(std::vector<Studentai>  & vektstud,int k);
  double Mediana(std::vector<int> balai,int namsk);
  double Vidurkis(double laikinvid,int e);
  int Ilgiausia(std::vector<std::string>pavardes);

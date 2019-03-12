@@ -1,4 +1,5 @@
 #include <random>
+#include <unordered_set>
 #include "galvininkas.h"
 
 
@@ -7,17 +8,10 @@ int Irasymasdekas(std::deque<Studentai>nemoka,std::deque<Studentai>moka,int k)
 
 
     std::ofstream ne;
-    std::ofstream taip;
-    std::stringstream a;
-    std::string failovardas;
+
     std::stringstream a1;
     std::string failovardas1;
 
-    a<<k;
-    failovardas= "DekasMoka_" + a.str();
-
-    failovardas += ".txt";
-    taip.open(failovardas.c_str(), std::ios::out);
     a1<<k;
     failovardas1= "DekasNemoka_" + a1.str();
 
@@ -32,21 +26,14 @@ int Irasymasdekas(std::deque<Studentai>nemoka,std::deque<Studentai>moka,int k)
         }
         ne<<std::setw(7)<<std::right<<nemoka[i].testas<<std::setw(20)<< std::setprecision (2) << std::fixed<<nemoka[i].galutinis<<std::right<<std::setw(15)<< std::setprecision (2) << std::fixed<<nemoka[i].galutinismediana<<std::endl;
     }
-    for(int i=0;i<moka.size();i++)
-    {
-        taip<<std::left<<std::setw(15)<<moka[i].vardas<<std::setw(20)<<std::left<<moka[i].pavarde;
-        for(int j=0;j<50;j++)
-        {
-            taip<<std::setw(5)<<std::left<<moka[i].balai[j];
-        }
-        taip<<std::setw(7)<<std::right<<moka[i].testas<<std::setw(20)<< std::setprecision (2) << std::fixed<<moka[i].galutinis<<std::right<<std::setw(15)<< std::setprecision (2) << std::fixed<<moka[i].galutinismediana<<std::endl;
-    }
+
 
     ne.close();
-    taip.close();
+
 
 
 }
+
 void Rusis3(std::deque<Studentai>dekasstud,int k)
 {
 
@@ -56,19 +43,23 @@ void Rusis3(std::deque<Studentai>dekasstud,int k)
 
     auto startasdekas = std::chrono::system_clock::now();
 
-    for(int i=0;i<dekasstud.size();i++)
-    {
-        if(dekasstud[i].galutinis<5)
-        {
-            nemoka.push_back(dekasstud[i]);
-        }
-        else
-        {
 
-            moka.push_back(dekasstud[i]);
-        }
 
+
+    for (auto it = begin(dekasstud); it != end(dekasstud);) {
+        if (it->galutinis <= 5) {
+            nemoka.push_back(*it);
+            it = dekasstud.erase(it);
+        }
+            else
+            ++it;
     }
+
+
+
+
+
+
     auto endasdekas = std::chrono::system_clock::now();
     std::chrono::duration<double> uztrukodekas = endasdekas - startasdekas;
     std::cout<<"10 pakelta " << k<<" (dekas) rusiuoja   :   "<<std::fixed<<std::setprecision(20)<<uztrukodekas.count()<< std::endl;
@@ -79,17 +70,10 @@ int Irasymaslistas(std::list<Studentai>nemoka,std::list<Studentai>moka,int k)
 
     std::list<Studentai>::iterator ite;
     std::ofstream ne;
-    std::ofstream taip;
-    std::stringstream a;
-    std::string failovardas;
+
     std::stringstream a1;
     std::string failovardas1;
 
-    a<<k;
-    failovardas= "ListMoka_" + a.str();
-
-    failovardas += ".txt";
-    taip.open(failovardas.c_str(), std::ios::out);
     a1<<k;
     failovardas1= "ListNemoka_" + a1.str();
 
@@ -106,18 +90,10 @@ int Irasymaslistas(std::list<Studentai>nemoka,std::list<Studentai>moka,int k)
         }
         ne<<std::setw(7)<<std::right<<ite->testas<<std::setw(20)<< std::setprecision (2) << std::fixed<<ite->galutinis<<std::right<<std::setw(15)<< std::setprecision (2) << std::fixed<<ite->galutinismediana<<std::endl;
     }
-  for(ite=moka.begin();ite!=moka.end();ite++)
-    {
-        taip<<std::left<<std::setw(15)<<ite->vardas<<std::setw(20)<<std::left<<ite->pavarde;
-        for(int j=0;j<50;j++)
-        {
-            taip<<std::setw(5)<<std::left<<ite->balai[j];
-        }
-        taip<<std::setw(7)<<std::right<<ite->testas<<std::setw(20)<< std::setprecision (2) << std::fixed<<ite->galutinis<<std::right<<std::setw(15)<< std::setprecision (2) << std::fixed<<ite->galutinismediana<<std::endl;
-    }
+
 
     ne.close();
-    taip.close();
+
 
 
 }
@@ -130,19 +106,16 @@ std::list<Studentai>::iterator it;
 
     auto startrusislistas = std::chrono::system_clock::now();
 
-  it = liststud.begin();
-    while (it != liststud.end()){
-        if(it->galutinis <5)
-        {
-            nemoka.push_back(*it);
-        }
-        else if(it->galutinis>=5)
-        {
-            moka.push_back(*it);
-        }
 
-        it++;
+    for (auto it = begin(liststud); it != end(liststud);) {
+        if (it->galutinis <= 5) {
+            nemoka.push_back(*it);
+            it = liststud.erase(it);
+        }
+        else
+            ++it;
     }
+
 
     auto endrusislistas = std::chrono::system_clock::now();
     std::chrono::duration<double>uztrukolistas = endrusislistas - startrusislistas;
@@ -151,19 +124,13 @@ std::list<Studentai>::iterator it;
 
 }
 
-int Irasymas(std::vector<Studentai>nemoka,std::vector<Studentai>moka,int k)
+int Irasymas(std::vector<Studentai>nemoka,int k)
 {
     std::ofstream ne;
-    std::ofstream taip;
-    std::stringstream a;
-    std::string failovardas;
+
     std::stringstream a1;
     std::string failovardas1;
-    a<<k;
-    failovardas= "Moka_" + a.str();
 
-    failovardas += ".txt";
-    taip.open(failovardas.c_str(), std::ios::out);
     a1<<k;
     failovardas1= "Nemoka_" + a1.str();
 
@@ -178,23 +145,20 @@ int Irasymas(std::vector<Studentai>nemoka,std::vector<Studentai>moka,int k)
         }
         ne<<std::setw(7)<<std::right<<nemoka[i].testas<<std::setw(20)<< std::setprecision (2) << std::fixed<<nemoka[i].galutinis<<std::right<<std::setw(15)<< std::setprecision (2) << std::fixed<<nemoka[i].galutinismediana<<std::endl;
     }
-    for(int i=0;i<moka.size();i++)
-    {
-        taip<<std::left<<std::setw(15)<<moka[i].vardas<<std::setw(20)<<std::left<<moka[i].pavarde;
-        for(int j=0;j<50;j++)
-        {
-            taip<<std::setw(5)<<std::left<<moka[i].balai[j];
-        }
-        taip<<std::setw(7)<<std::right<<moka[i].testas<<std::setw(20)<< std::setprecision (2) << std::fixed<<moka[i].galutinis<<std::right<<std::setw(15)<< std::setprecision (2) << std::fixed<<moka[i].galutinismediana<<std::endl;
-    }
 
     ne.close();
-    taip.close();
+
 
 }
 
+bool IsMarkedToDelete(const Studentai & o)
+{
+    return o.galutinis<=5;
 
-void Rusis(std::vector<Studentai> vektstud,int k)
+
+}
+
+std::vector<Studentai> Rusis( std::vector<Studentai> & vektstud ,int k)
 {
 
     std::vector<Studentai> nemoka;
@@ -202,30 +166,25 @@ void Rusis(std::vector<Studentai> vektstud,int k)
 
     auto s = std::chrono::system_clock::now();
 
-    for(int i=0;i<vektstud.size();i++)
-    {
-        if(vektstud[i].galutinis<5)
-        {
-            nemoka.push_back(vektstud[i]);
-        }
-        else
-        {
 
-            moka.push_back(vektstud[i]);
-        }
+    std::copy_if(vektstud.begin(), vektstud.end(),std::inserter(nemoka, nemoka.end()), [](const Studentai & w){return w.galutinis<=5;});
 
-    }
+    vektstud.erase(std::remove_if(vektstud.begin(), vektstud.end(), IsMarkedToDelete),vektstud.end());
+
+
+
     auto e = std::chrono::system_clock::now();
     std::chrono::duration<double> u = e - s;
     std::cout<<"10 pakelta " << k<<" (vector) rusiuoja  :   "<<std::fixed<<std::setprecision(20)<<u.count()<< std::endl;
-    Irasymas(nemoka,moka,k);
+    Irasymas(nemoka,k);
+    return vektstud;
 
 }
 void Pirmasfailas(int k)
 {
   //  auto start = std::chrono::system_clock::now();
     Studentai gimt;
-    std::vector<Studentai> stud;
+    std::vector<Studentai> vektstud;
     std::list<Studentai> liststud;
     std::list<Studentai>::iterator it;
     std::deque<Studentai> dekasstud;
@@ -250,7 +209,11 @@ void Pirmasfailas(int k)
     fr<<std::endl;
 
 
-    srand (time(NULL));
+
+    std::mt19937 generator;
+    generator.seed(std::time(0));
+    std::uniform_int_distribution<uint64_t> dice(1,10);
+
     for(int i=0;i<std::round(pow(10,k));i++)
     {
 
@@ -259,14 +222,14 @@ void Pirmasfailas(int k)
         gimt.pavarde="Pavarde"+std::to_string(i);
         for(int j=0;j<50;j++)
         {
-            int bet=rand() % 10 + 1;
+            int bet=dice(generator);
 
             laikinvid=bet+laikinvid;
 
 
             gimt.balai.push_back(bet);
         }
-        gimt.testas=rand() % 10 + 1;
+        gimt.testas=dice(generator);
 
 
 
@@ -277,7 +240,7 @@ void Pirmasfailas(int k)
 
 
 
-        stud.push_back(gimt);
+        vektstud.push_back(gimt);
         liststud.push_back(gimt);
         dekasstud.push_back(gimt);
 
@@ -287,19 +250,20 @@ void Pirmasfailas(int k)
         laikinvid=0;
     }
 
-    Rusis(stud, k);
-  Rusis2(liststud, k);
-   Rusis3(dekasstud,k);
+   Rusis(vektstud, k);
+   Rusis2(liststud, k);
+  Rusis3(dekasstud,k);
 
 
-    for(int i=0;i<stud.size();i++)
+
+    for(int i=0;i<vektstud.size();i++)
     {
-        fr<<std::left<<std::setw(15)<<stud[i].vardas<<std::setw(30)<<std::left<<stud[i].pavarde;
+        fr<<std::left<<std::setw(15)<<vektstud[i].vardas<<std::setw(30)<<std::left<<vektstud[i].pavarde;
         for(int j=0;j<50;j++)
         {
-            fr<<std::setw(5)<<std::left<<stud[i].balai[j];
+            fr<<std::setw(5)<<std::left<<vektstud[i].balai[j];
         }
-        fr<<std::setw(7)<<std::right<<stud[i].testas<<std::setw(20)<< std::setprecision (2) << std::fixed<<stud[i].galutinis<<std::right<<std::setw(15)<< std::setprecision (2) << std::fixed<<stud[i].galutinismediana<<std::endl;
+        fr<<std::setw(7)<<std::right<<vektstud[i].testas<<std::setw(20)<< std::setprecision (2) << std::fixed<<vektstud[i].galutinis<<std::right<<std::setw(15)<< std::setprecision (2) << std::fixed<<vektstud[i].galutinismediana<<std::endl;
 
     }
 
@@ -362,19 +326,20 @@ void Ivedimas()
             int n=3;
             stud.vardas;
 
+
+            std::mt19937 generator;
+            generator.seed(std::time(0));
+            std::uniform_int_distribution<uint64_t> dice(1,10);
             int intime;
-            //std::random_device rd;
-            //std::mt19937 mt(rd());
-           // std::uniform_int_distribution<int> dist(1,10);
-           srand (time(NULL));
+          // srand (time(NULL));
             for(int i=0;i<n;i++)
             {
-                //intime = rand() % 10 + 1;
+                intime=dice(generator);
                 stud.balai.push_back(intime);
                 laikinvid=stud.balai[i]+laikinvid;
 
             }
-            int egz=rand() % 10 + 1;
+            int egz=dice(generator);
 
             stud.galutinis = 0.4 * Vidurkis(laikinvid,n) + 0.6 * egz;
             stud.galutinismediana= 0.4 * Mediana(stud.balai,n) + 0.6 * egz ;
@@ -535,7 +500,7 @@ void Tekstas()
     try{
         fd.open("kursiokai.txt");
         if (!fd.good()){
-            throw "Tekstinio failo atidaryt neimanoma";
+            throw "Tekstinio failo atidaryti neimanoma";
 
         }
     } catch(const char *msg)
