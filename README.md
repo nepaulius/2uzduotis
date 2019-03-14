@@ -2,8 +2,8 @@
 
 * **v0.1**
 
-Programa skaičiuoja vartotojo įvestus studentų namų darbų ir egzamino vidurkį ir medianą.
-Programos trūkumai:
+Programa skaičiuoja vartotojo įvestus studentų namų darbų ir egzamino vidurkį ir medianą.\
+Programos trūkumai:\
 Nėra validacijų (vartotojas turi įvesti tai ką jo prašo programa)
 ___
 
@@ -30,8 +30,8 @@ Programa naudoja try/catch funkciją, tikrinant ar atsidaro tekstinis failas su 
 ```
 
 
-Programos patobulinimai:
-Yra validacijos
-Programos trūkumai :
+Programos patobulinimai:\
+Yra validacijos\
+Programos trūkumai :\
 Tekstinis failas turi būti surašytas be klaidų, kitaip programa užlūžta, nėra validacijų
 ___
