@@ -53,9 +53,9 @@ Programos rezultatai lentelėje :
 
 |*Konteinerių tipas/Studentų skaičius*|10|100|1 000|10 000|100 000|
 |---|:---:|:---:|:---:|:---:|:---:|
-**Rūšiavimo laikas (sekundėmis)** tipas - *Vector*|0,000|0,000|0,001|0,014|0,154     
-**Rūšiavimo laikas (sekundėmis)** tipas - *List*|0,000|0,000|0,002|0,01|0,101
-**Rūšiavimo laikas (sekundėmis)** tipas - *Deque*|0,000|0,000|0,001|0,008|0,113
+**Rūšiavimo laikas (sekundėmis)** tipas - __*Vector*__|0,000|0,000|0,001|0,014|0,154     
+**Rūšiavimo laikas (sekundėmis)** tipas - __*List*__|0,000|0,000|0,002|0,01|0,101
+**Rūšiavimo laikas (sekundėmis)** tipas - __*Deque*__|0,000|0,000|0,001|0,008|0,113
 ___
 * **v1.0**
 
@@ -73,6 +73,18 @@ Programos rezultatai lentelėje :
 
 |*Konteinerių tipas/Studentų skaičius*|10|100|1 000|10 000|100 000|
 |---|:---:|:---:|:---:|:---:|:---:|
-**Rūšiavimo laikas (sekundėmis)** tipas - *Vector*|0,000|0,000|0,118|10,531|1117,103     
-**Rūšiavimo laikas (sekundėmis)** tipas - *List*|0,000|0,000|0,006|0,013|0,046
-**Rūšiavimo laikas (sekundėmis)** tipas - *Deque*|0,000|0,000|0,041|4,560|447,017
+**Rūšiavimo laikas (sekundėmis)** tipas - __*Vector*__|0,000|0,000|0,118|10,531|1117,103     
+**Rūšiavimo laikas (sekundėmis)** tipas - __*List*__|0,000|0,000|0,006|0,013|0,046
+**Rūšiavimo laikas (sekundėmis)** tipas - __*Deque*__|0,000|0,000|0,041|4,560|447,017
+
+Programa po optimizacijos (*vector tipo konteineris*)
+
+![](https://user-images.githubusercontent.com/45967745/54386159-04758380-46a1-11e9-94b3-658b4afb8c81.JPG)
+
+Programa po optimizacijos lentelė:
+
+|*Studentų skaičius*|10|100|1 000|10 000|100 000|
+|---|:---:|:---:|:---:|:---:|:---:|
+**Rūšiavimo laikas (sekundėmis)** tipas - __*Vector(neoptimizuotas)*__|0,000|0,000|0,118|10,531|1117,103     
+**Rūšiavimo laikas (sekundėmis)** tipas - __*Vector(optimizuotas)*__|0,000|0,000|0,01|0,014|0,12
+
