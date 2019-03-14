@@ -36,8 +36,8 @@ Programos trūkumai :\
 Tekstinis failas turi būti surašytas be klaidų, kitaip programa užlūžta, nėra validacijų
 ___
 * **v0.4**
-Programa rūšiuoja studentus pagal jų vidurkį\
+Programa rūšiuoja studentus pagal jų vidurkį
 
 |*Studentų skaičius*|10|100|1 000|10 000|100 000|
-|---|---|---|---|---|---|
+|---|:---:|:---:|:---:|:---:|:---:|
 |**Rūšiavimo laikas (sekundėmis)**|0,125|0,21|0,34|1,11|8,5|
