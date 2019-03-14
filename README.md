@@ -30,6 +30,6 @@ Programa naudoja try/catch funkciją, tikrinant ar atsidaro tekstinis failas su 
 ```
 Programos patobulinimai:
 Yra validacijos
-Programos trūkumai:
-Tekstinis failas turi būti surašytas be klaidų, kitaip programa užlūžta.
+Programos trūkumai :
+Tekstinis failas turi būti surašytas be klaidų, kitaip programa užlūžta, nėra validacijų
 ___
