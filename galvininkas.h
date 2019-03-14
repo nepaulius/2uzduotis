@@ -46,6 +46,12 @@ std::vector<Studentai> Rusis(std::vector<Studentai>  & vektstud,int k);
 void Rusis2(std::list<Studentai> liststud,int k);
 void Rusis3(std::deque<Studentai>dekasstud,int k);
 void Ivedimas();
+int PerkeltiIrasyma1sdekas(std::deque<Studentai>nemoka,std::deque<Studentai>moka,int k);
+int PerkeltiIrasymas1vector(std::vector<Studentai>nemoka,std::vector<Studentai>moka,int k);
+void PerkeltiRusis3(std::deque<Studentai>dekasstud,int k);
+int PerkeltiIrasymaslistas(std::list<Studentai>nemoka,std::list<Studentai>moka,int k);
+void PerkeltiRusis2(std::list<Studentai> liststud,int k);
+void PerkeltiRusis(std::vector<Studentai> vektstud,int k);
 
 
 

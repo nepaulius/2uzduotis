@@ -3,7 +3,8 @@
 #include "galvininkas.h"
 
 
-int Irasymasdekas(std::deque<Studentai>nemoka,std::deque<Studentai>moka,int k)
+
+int Irasymasdekas(std::deque<Studentai>nemoka,int k)
 {
 
 
@@ -39,7 +40,7 @@ void Rusis3(std::deque<Studentai>dekasstud,int k)
 
 
     std::deque<Studentai> nemoka;
-    std::deque<Studentai> moka;
+
 
     auto startasdekas = std::chrono::system_clock::now();
 
@@ -56,16 +57,13 @@ void Rusis3(std::deque<Studentai>dekasstud,int k)
     }
 
 
-
-
-
-
     auto endasdekas = std::chrono::system_clock::now();
     std::chrono::duration<double> uztrukodekas = endasdekas - startasdekas;
     std::cout<<"10 pakelta " << k<<" (dekas) rusiuoja   :   "<<std::fixed<<std::setprecision(20)<<uztrukodekas.count()<< std::endl;
-    Irasymasdekas(nemoka,moka,k);
+    Irasymasdekas(nemoka,k);
 }
-int Irasymaslistas(std::list<Studentai>nemoka,std::list<Studentai>moka,int k)
+
+int Irasymaslistas(std::list<Studentai>nemoka,int k)
 {
 
     std::list<Studentai>::iterator ite;
@@ -97,10 +95,11 @@ int Irasymaslistas(std::list<Studentai>nemoka,std::list<Studentai>moka,int k)
 
 
 }
+
 void Rusis2(std::list<Studentai> liststud,int k)
 {
 std::list<Studentai>nemoka;
-std::list<Studentai>moka;
+
 std::list<Studentai>::iterator it;
 
 
@@ -120,7 +119,7 @@ std::list<Studentai>::iterator it;
     auto endrusislistas = std::chrono::system_clock::now();
     std::chrono::duration<double>uztrukolistas = endrusislistas - startrusislistas;
     std::cout <<"10 pakelta "<< k<<" (list) rusiuoja    :   "<<std::fixed<<std::setprecision(20)<<uztrukolistas.count()<< std::endl;
-    Irasymaslistas(nemoka,moka,k);
+    Irasymaslistas(nemoka,k);
 
 }
 
@@ -162,7 +161,7 @@ std::vector<Studentai> Rusis( std::vector<Studentai> & vektstud ,int k)
 {
 
     std::vector<Studentai> nemoka;
-    std::vector<Studentai> moka;
+
 
     auto s = std::chrono::system_clock::now();
 
@@ -171,8 +170,6 @@ std::vector<Studentai> Rusis( std::vector<Studentai> & vektstud ,int k)
 
     vektstud.erase(std::remove_if(vektstud.begin(), vektstud.end(), IsMarkedToDelete),vektstud.end());
 
-
-
     auto e = std::chrono::system_clock::now();
     std::chrono::duration<double> u = e - s;
     std::cout<<"10 pakelta " << k<<" (vector) rusiuoja  :   "<<std::fixed<<std::setprecision(20)<<u.count()<< std::endl;
@@ -180,7 +177,8 @@ std::vector<Studentai> Rusis( std::vector<Studentai> & vektstud ,int k)
     return vektstud;
 
 }
-void Pirmasfailas(int k)
+
+void Pirmasfailas(int k,std::string r)
 {
   //  auto start = std::chrono::system_clock::now();
     Studentai gimt;
@@ -207,6 +205,7 @@ void Pirmasfailas(int k)
     }
     fr<<std::setw(12)<<std::right<<"Egzaminas"<<std::setw(35)<<std::right<<"Galutinis vid./ Galutinis med"<<std::endl;
     fr<<std::endl;
+
 
 
 
@@ -250,10 +249,16 @@ void Pirmasfailas(int k)
         laikinvid=0;
     }
 
-   Rusis(vektstud, k);
-   Rusis2(liststud, k);
-  Rusis3(dekasstud,k);
-
+    if(r[0]=='V') {
+        PerkeltiRusis(vektstud, k);
+        PerkeltiRusis2(liststud, k);
+        PerkeltiRusis3(dekasstud, k);
+    }
+    else if(r[0]=='M') {
+        Rusis(vektstud, k);
+     //   Rusis2(liststud, k);
+       // Rusis3(dekasstud, k);
+    }
 
 
     for(int i=0;i<vektstud.size();i++)
