@@ -28,7 +28,7 @@ Programa naudoja try/catch funkciją, tikrinant ar atsidaro tekstinis failas su 
         std::cout<<msg;
     }
 ```
-    Programos patobulinimai:
+   Programos patobulinimai:
     Yra validacijos
 Programos trūkumai:
 Tekstinis failas turi būti surašytas be klaidų, kitaip programa užlūžta.
