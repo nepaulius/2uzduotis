@@ -49,6 +49,8 @@ Programos rezultatai :\
 ![](https://user-images.githubusercontent.com/45967745/54384676-7946be80-469d-11e9-8666-295833761994.JPG)
 
 Programos rezultatai lentelėje : \
+
+
 |*Konteinerių tipas/Studentų skaičius*|10|100|1 000|10 000|100 000|
 |---|:---:|:---:|:---:|:---:|:---:|
 **Rūšiavimo laikas (sekundėmis)** tipas - *Vector*|0,000|0,000|0,001|0,014|0,154     
