@@ -109,6 +109,6 @@ Rezultatai lentelėje
 |---|:---:|:---:|
 **Rūšiavimo laikas (sekundėmis)** tipas - __*Vector(rastiMinkstus)*__|7,27|650,56 
 **Rūšiavimo laikas (sekundėmis)** tipas - __*Vector(rastiKietus)*__|37,15|3375,45 
-**Rūšiavimo laikas (sekundėmis)** tipas - __*Dekas(rastiMinkstus)*__|3,0456|0,0156 
-**Rūšiavimo laikas (sekundėmis)** tipas - __*Dekas(rastiKietus)*__|249,847|0,062 
+**Rūšiavimo laikas (sekundėmis)** tipas - __*Dekas(rastiMinkstus)*__|3,0456|229,84
+**Rūšiavimo laikas (sekundėmis)** tipas - __*Dekas(rastiKietus)*__|0,0156|0,062 
 
