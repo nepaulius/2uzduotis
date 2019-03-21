@@ -99,10 +99,10 @@ ___
 
 * **Papildoma**
 
-Rezultatai programoje:
+Rezultatai programoje:/
 ![Capturedekas](https://user-images.githubusercontent.com/45967745/54785790-c1cb2280-4c2f-11e9-893f-edb8f6c479b3.JPG)
 
-Rezultatai lentelėje
+Rezultatai lentelėje/
 |*Konteinerių tipas/Studentų skaičius*|10 000|100 000|
 |---|:---:|:---:|
 **Rūšiavimo laikas (sekundėmis)** tipas - __*Vector(rastiMinkstus)*__|7,27|650,56 
