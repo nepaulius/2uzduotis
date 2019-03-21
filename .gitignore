@@ -3,6 +3,6 @@ bin/
 .idea/
 build/
 cmake-build-debug/
-cmake-build-debug-mingw
+cmake-build-debug-mingw/
 *.cbp
 *.layout

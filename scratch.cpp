@@ -1,59 +1,104 @@
+#include <unordered_set>
 #include "galvininkas.h"
 
-void Rusis(std::vector<Studentai> vektstud,int k)
+void raskitKietusDekas(std::deque<Studentai>& studentai)
 {
-
-
-    std::ofstream ne;
-    std::ofstream taip;
-    std::stringstream a;
-    std::string failovardas;
-    std::stringstream a1;
-    std::string failovardas1;
-    a<<k;
-    failovardas= "Moka_" + a.str();
-
-    failovardas += ".txt";
-    taip.open(failovardas.c_str(), std::ios::out);
-    a1<<k;
-    failovardas1= "Nemoka_" + a1.str();
-
-    failovardas1 += ".txt";
-    ne.open(failovardas1.c_str(), std::ios::out);
-
-
-    for(int i=0;i<vektstud.size();i++)
+    int c=0;
+    std::deque<Studentai>::size_type i=0;
+    while(i!=studentai.size())
     {
-        if(vektstud[i].galutinis<5)
+        if(studentai[i].galutinis>=5)
         {
-            ne<<std::left<<std::setw(15)<<vektstud[i].vardas<<std::setw(20)<<std::left<<vektstud[i].pavarde;
-            for(int j=0;j<10;j++)
-            {
-                ne<<std::setw(5)<<std::left<<vektstud[i].balai[j];
-            }
-            ne<<std::setw(7)<<std::right<<vektstud[i].testas<<std::setw(20)<< std::setprecision (2) << std::fixed<<vektstud[i].galutinis<<std::right<<std::setw(15)<< std::setprecision (2) << std::fixed<<vektstud[i].galutinismediana<<std::endl;
-
+            studentai.push_front(studentai[i]);
+            i++;
+            c++;
         }
-        else
-        {
-            taip<<std::left<<std::setw(10)<<vektstud[i].vardas<<std::setw(20)<<std::left<<vektstud[i].pavarde;
-            for(int j=0;j<10;j++)
-            {
-                taip<<std::setw(5)<<std::left<<vektstud[i].balai[j];
-            }
-            taip<<std::setw(7)<<std::right<<vektstud[i].testas<<std::setw(20)<< std::setprecision (2) << std::fixed<<vektstud[i].galutinis<<std::right<<std::setw(15)<< std::setprecision (2) << std::fixed<<vektstud[i].galutinismediana<<std::endl;
-        }
-
+        i++;
     }
-    ne.close();
-    taip.close();
+    studentai.resize(c);
+    studentai.shrink_to_fit();
 
 }
+void raskitMinkstusDekas(std::deque<Studentai>& studentai) {
+    std::deque<Studentai> minksti;
+    for (int i = 0; i < studentai.size(); i++) {
+        if (studentai[i].galutinis < 5) {
+            minksti.push_back(studentai[i]);
+            studentai.erase(studentai.begin() + i);
+        } else i++;
+    }
+
+}
+void raskMinkstus(std::vector<Studentai>& studentai) {
+    std::vector<Studentai> minksti;
+    for (int i = 0; i < studentai.size(); i++) {
+        if (studentai[i].galutinis < 5) {
+            minksti.push_back(studentai[i]);
+            studentai.erase(studentai.begin() + i);
+        } else i++;
+    }
+
+}
+void raskitKietus(std::vector<Studentai>& vektstud)
+{
+    int c=0;
+    std::vector<Studentai>::size_type i=0;
+    while(i!=vektstud.size())
+    {
+        if(vektstud[i].galutinis>=5)
+        {
+            vektstud.insert(vektstud.begin(),vektstud[i]);
+            i++;
+            c++;
+        }
+        i++;
+    }
+    vektstud.resize(c);
+    vektstud.shrink_to_fit();
+
+}
+
+
+void Rusis(std::deque<Studentai> dekastud,std::vector<Studentai> vektstud,int k)
+{
+
+    auto start1=std::chrono::high_resolution_clock::now();
+    raskMinkstus(vektstud);
+    auto end1=std::chrono::high_resolution_clock::now();
+    std::chrono::duration<double> skirtumas1=end1-start1;
+
+    auto start2=std::chrono::high_resolution_clock::now();
+    raskitKietus(vektstud);
+    auto end2=std::chrono::high_resolution_clock::now();
+    std::chrono::duration<double> skirtumas2=end2-start2;
+
+    auto start3=std::chrono::high_resolution_clock::now();
+    raskitMinkstusDekas(dekastud);
+    auto end3=std::chrono::high_resolution_clock::now();
+    std::chrono::duration<double> skirtumas3=end3-start3;
+
+    auto start4=std::chrono::high_resolution_clock::now();
+    raskitKietusDekas(dekastud);
+    auto end4=std::chrono::high_resolution_clock::now();
+    std::chrono::duration<double> skirtumas4=end4-start4;
+
+
+
+    std::cout<<"Vektorius trina minkstus, kai "<<pow(10,k)<<" per "<<skirtumas1.count()<<std::endl;
+    std::cout<<"Vektorius rusiuoja kietus, kai "<<pow(10,k)<<" per "<<skirtumas2.count()<<std::endl;
+    std::cout<<"Dekas trina minkstus, kai "<<pow(10,k)<<" per "<<skirtumas3.count()<<std::endl;
+    std::cout<<"Dekas rusiuoja kietus, kai "<<pow(10,k)<<" per "<<skirtumas4.count()<<std::endl;
+
+
+}
+
 void Pirmasfailas(int k)
 {
     auto start = std::chrono::system_clock::now();
     Studentai gimt;
+
     std::vector<Studentai> stud;
+    std::deque<Studentai> dekastud;
 
     double laikinvid=0;
     std::string failovardas;
@@ -103,15 +148,15 @@ void Pirmasfailas(int k)
 
 
         stud.push_back(gimt);
+        dekastud.push_back(gimt);
 
 
         gimt.balai.clear();
-\
+
         laikinvid=0;
     }
 
-    Rusis(stud, k);
-
+   Rusis(dekastud,stud, k);
 
 
     for(int i=0;i<stud.size();i++)
@@ -129,7 +174,7 @@ void Pirmasfailas(int k)
     fr.close();
     auto end = std::chrono::system_clock::now();
     auto elapsed = end - start;
-    std::cout << k<<" karta skaiciuojant uztruko :   "<<elapsed.count() << std::endl;
+
 
 }
 std::string Tik2()

@@ -6,7 +6,7 @@
 int main()
 {
 
-     for(int k=1;k<6;k++)
+     for(int k=4;k<6;k++)
     {
 
         Pirmasfailas(k);
