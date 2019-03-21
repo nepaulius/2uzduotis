@@ -97,3 +97,16 @@ ___
 ![](https://user-images.githubusercontent.com/45967745/54426465-9a9cbe80-4720-11e9-995a-43dfb470a814.JPG)
 ___
 
+* **Papildoma**
+
+Rezultatai programoje:
+![Capturedekas](https://user-images.githubusercontent.com/45967745/54785790-c1cb2280-4c2f-11e9-893f-edb8f6c479b3.JPG)
+
+Rezultatai lentelėje
+|*Konteinerių tipas/Studentų skaičius*|10 000|100 000|
+|---|:---:|:---:|
+**Rūšiavimo laikas (sekundėmis)** tipas - __*Vector(rastiMinkstus)*__|7,27|650,56 
+**Rūšiavimo laikas (sekundėmis)** tipas - __*Vector(rastiKietus)*__|37,15|3375,45 
+**Rūšiavimo laikas (sekundėmis)** tipas - __*Dekas(rastiMinkstus)*__|3,0456|0,0156 
+**Rūšiavimo laikas (sekundėmis)** tipas - __*Dekas(rastiKietus)*__|249,847|0,062 
+
