@@ -1,8 +1,17 @@
 obj/
+
 bin/
+
 .idea/
+
 build/
 cmake-build-debug/
+
 cmake-build-debug-mingw/
+
 *.cbp
+
 *.layout
+main.exe
+main.o
+scratch.o
