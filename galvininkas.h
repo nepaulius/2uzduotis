@@ -44,6 +44,10 @@ void Rusis(std::vector<Studentai> vektstud,int k);
  std::string ValidacijaVidurkiuIrMedianai(std::string b);
 void Pirmasfailas2(int k);
 void Rusis2(std::list<Studentai> liststud,int k);
+void raskitKietusDekas(std::deque<Studentai>& studentai);
+void raskitMinkstusDekas(std::deque<Studentai>& studentai);
+void raskMinkstus(std::vector<Studentai>& studentai);
+void raskitKietus(std::vector<Studentai>& vektstud);
 
 
 
