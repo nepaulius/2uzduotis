@@ -5,6 +5,8 @@
 Programa skaičiuoja vartotojo įvestus studentų namų darbų ir egzamino vidurkį ir medianą.\
 Programos trūkumai:\
 Nėra validacijų (vartotojas turi įvesti tai ką jo prašo programa).
+Reikia nusikopijuoti CMakeLists.txt ir įkelti į atisiųstą aplanką (Nukopijuotą CMakeLists.txt savo kompiuteryje pavadinti CMakeLists.txt ir nurodyti jo buvimo vietą IDE)
+https://raw.githubusercontent.com/nepaulius/2uzduotis/master/CMakeLists.txt
 ___
 
 * **v0.2**
