@@ -88,6 +88,7 @@ Programa po optimizacijos lentelė:
 **Rūšiavimo laikas (sekundėmis)** tipas - __*Vector(neoptimizuotas)*__|0,000|0,000|0,118|10,531|1117,103     
 **Rūšiavimo laikas (sekundėmis)** tipas - __*Vector(optimizuotas)*__|0,000|0,000|0,01|0,014|0,12
 ___
+**Programos paleidimas **
 
 **1)** Norint pasileisti programą reikia atsisiųsti ir įsidiegti vieną iš C++ kalbą palaikančių IDE:\
 [Galimi variantai](https://www.google.com/search?ei=joCLXL_aOceOrwS05oK4BQ&q=c%2B%2B+ide+download&oq=c%2B%2B+ide+d&gs_l=psy-ab.1.0.0i19l6j0i22i30i19l4.8164.9984..10956...0.0..0.100.179.1j1......0....1..gws-wiz.......0i71j0i67j0.iYvw4THCg-U)\
@@ -95,6 +96,7 @@ ___
 [Pavyzdys - Versija 1.0](https://github.com/nepaulius/2uzduotis/releases/tag/v1.0)\
 **3)** Atsisiųsti Source code (.zip arba tar.gz)\
 ![](https://user-images.githubusercontent.com/45967745/54426465-9a9cbe80-4720-11e9-995a-43dfb470a814.JPG)
+**4)** Per IDE paleisti atsisiųstą aplanką. 
 ___
 
 * **Papildoma**
