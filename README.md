@@ -88,6 +88,7 @@ Programa po optimizacijos lentelė:
 **Rūšiavimo laikas (sekundėmis)** tipas - __*Vector(neoptimizuotas)*__|0,000|0,000|0,118|10,531|1117,103     
 **Rūšiavimo laikas (sekundėmis)** tipas - __*Vector(optimizuotas)*__|0,000|0,000|0,01|0,014|0,12
 ___
+
 **Programos paleidimas **
 
 **1)** Norint pasileisti programą reikia atsisiųsti ir įsidiegti vieną iš C++ kalbą palaikančių IDE:\
