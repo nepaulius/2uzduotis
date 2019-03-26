@@ -15,6 +15,8 @@ Programa skaičiuoja tekstiniame faile surašytų studentų namų darbų ir egza
 
 Programos trūkumai:
 Tekstinis failas turi būti surašytas be klaidų, kitaip programa užlūžta, nėra validacijų.
+Reikia nusikopijuoti CMakeLists.txt ir įkelti į atisiųstą aplanką (Nukopijuotą CMakeLists.txt savo kompiuteryje pavadinti CMakeLists.txt ir nurodyti jo buvimo vietą IDE)
+https://raw.githubusercontent.com/nepaulius/2uzduotis/master/CMakeLists.txt
 ___
 * **v0.3**
 
@@ -36,6 +38,8 @@ Programos patobulinimai:\
 Yra validacijos\
 Programos trūkumai :\
 Tekstinis failas turi būti surašytas be klaidų, kitaip programa užlūžta, nėra validacijų.
+Reikia nusikopijuoti CMakeLists.txt ir įkelti į atisiųstą aplanką (Nukopijuotą CMakeLists.txt savo kompiuteryje pavadinti CMakeLists.txt ir nurodyti jo buvimo vietą IDE)
+https://raw.githubusercontent.com/nepaulius/2uzduotis/master/CMakeLists.txt
 ___
 * **v0.4**
 Programa rūšiuoja studentus pagal jų vidurkį.
